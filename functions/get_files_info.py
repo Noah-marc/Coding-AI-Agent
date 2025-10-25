@@ -28,10 +28,12 @@ def get_files_info(working_directory, directory="."):
         
         
         contents = []
+        os.path.pardir
         for path in os.listdir(full_path):
-            path = os.path.join(full_path, path)
-            is_dir = not(os.path.isfile(path))
-            size = os.path.getsize(path)
+            location_path = os.path.join(full_path, path)
+            is_dir = not(os.path.isfile(location_path))
+            size = os.path.getsize(location_path)
+
             contents.append(f"{path}: file_size={size} bytes, is_dir={is_dir}")
 
         return "\n".join(contents)
